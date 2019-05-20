@@ -1,0 +1,9 @@
+<ul *ngIf="user.firstname !== 'Zsombor'">
+  <li > {{user.firstname}} {{user.lastname}} {{user.roles}}
+    <button (click)="alertUser(user)"> alert{{user.firstname}}</button>
+<!--    <button appJumper (click)="saySomething()"> alert{{"viewClick"}}</button>-->
+   <!-- <button  appDirnow [roles] = "user.roles"> </button>-->
+  </li>
+
+
+</ul>

@@ -1,0 +1,194 @@
+<form #f="ngForm" (ngSubmit) = "submit(f)">
+<!--  <div ngModelGroup ="user" #user="ngModelGroup">
+    <div class="form-group">
+          <label for="firstName1"> FirstName Group </label>
+          <input class="form-control"
+                            type="text"
+                            id="firstName1"
+                            name="firstName1"
+                            ngModel
+                 required
+                 pattern="kicsikutyatarka"
+                            (ngModelChange)="log(firstName1)"
+                            #firstName="ngModel">
+      <div class="alert alert-danger"
+           *ngIf = "firstName1.touched && firstName.invalid">
+        <div *ngIf="firstName1.errors?.required"> The field is required </div>
+        <div *ngIf="firstName1.errors?.pattern"> The pattern is invalid </div>
+      </div>
+    </div>
+
+      <div class="form-group">
+        <label> LastName Group </label>
+        <input class="form-control"
+                          type="text"
+                          id="lastName1"
+                          name="lastName1"
+                          ngModel
+               required
+                          (ngModelChange)="log(lastName1)"
+                          #lastName="ngModel">
+    <div class="alert alert-danger"
+         *ngIf = "lastName1.touched && lastName1.invalid">
+      lastname is required.
+    </div>
+  </div>
+
+  </div>-->
+
+   <!-- <div class="form-group">
+      <label for="firstName"> FirstName </label>
+      <input class="form-control"
+             type="text"
+             id="firstName"
+             name="firstName"
+             ngModel
+             required
+             pattern="kicsikutyatarka"
+             (ngModelChange)="log(firstName)"
+             #firstName="ngModel">
+  <div class="alert alert-danger"
+       *ngIf = "firstName.touched && firstName.invalid">
+    <div *ngIf="firstName.errors?.required"> The field is required </div>
+    <div *ngIf="firstName.errors?.pattern"> The pattern is invalid </div>
+  </div>
+</div>
+
+    <div class="form-group">
+      <label> LastName </label>
+      <input class="form-control"
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        ngModel
+             required
+
+                        (ngModelChange)="log(lastName)"
+                        #lastName="ngModel">
+  <div class="alert alert-danger"
+       *ngIf = "lastName.touched && lastName.invalid">
+    lastname is required.
+  </div>
+</div>
+  <div class="form-group">
+        <label> Phonenumber </label>
+        <input class="form-control"
+                          type="text"
+                          id="phoneNumber"
+                          name="phoneNumber"
+                          ngModel
+               required
+               pattern = "~(?:\+?49|0)(?:\s*\d{3}){2}\s*\d{4,10}~"
+                          (ngModelChange)="log(phoneNumber)"
+                          #phoneNumber="ngModel">
+    <div class="alert alert-danger"
+         *ngIf = "phoneNumber.touched && phoneNumber.invalid">
+      phoneNumber is required.
+    </div>
+    <div *ngIf="phoneNumber.errors?.pattern"> The pattern is invalid </div>
+  </div>
+
+  <button class="btn btn-primary" [disabled]= "f.invalid">
+    Submit
+  </button>
+
+
+  <div class="form-group">
+    <label> Comment </label>
+    <textarea id="comment"
+              type="textarea"
+              class="form-control">
+   </textarea>
+  </div>
+
+  <div class="form-group">
+    <LABEL>
+    <input type="checkbox" name="isSelected" ngModel> Selection
+    </LABEL>
+  </div>
+  <p>
+    {{f.value | json}}
+  </p>
+
+  <div class="radio" *ngFor="let hob of hobbies">
+    <LABEL>
+      <input type="radio"
+             name="hobbies"
+             ngModel
+             [value]="hob.id"> {{hob.name}}
+    </LABEL>
+  </div>
+  <div class="form-group">
+    <LABEL for="hobbies" > Hobbies Dropdown  </LABEL>
+      <select
+        multiple
+        class="form-control"
+        id="hobbies"
+        name="hobbies"
+        ngModel>
+    <option *ngFor="let hob of hobbies" [value]="hob.id"> {{hob.name}}</option>
+      </select>
+  </div>
+
+  <P> {{text1 | uppercase }}</P>
+  <P> {{text2 | summary }}</P>-->
+
+    <div class="form-group">
+      <label for="courseName"> Course Name </label>
+      <input class="form-control"
+                        type="text"
+                        id="courseName"
+                        name="courseName"
+                        ngModel
+             required
+
+                        (ngModelChange)="log(courseName)"
+                        #courseName="ngModel">
+  <div class="alert alert-danger"
+       *ngIf = "courseName.touched && courseName.invalid">
+    <div *ngIf="courseName.errors?.required"> The field is required </div>
+  </div>
+</div>
+
+  <div class="form-group">
+    <LABEL for="courses" > Category  </LABEL>
+    <select
+      multiple
+      class="form-control"
+      id="courses"
+      name="courses"
+      required
+      #co="ngModel"
+      ngModel
+      >
+      <option *ngFor="let cat of courses" [value]="cat.id"> {{cat.name}}</option>
+
+    </select>
+
+    <div class="alert alert-danger" *ngIf = "co.touched && co.invalid">
+    <div *ngIf="co.errors?.required"> The field is required ... </div>
+    </div>
+
+
+  </div>
+
+  <button class="btn btn-primary" [disabled]= "f.invalid">
+    Submit
+  </button>
+
+  <div class="form-group">
+    <LABEL>
+      <input type="checkbox" name="isSelected" ngModel>  30-day money-back guarantee
+    </LABEL>
+  </div>
+  <p>
+    {{f.value | json}}
+  </p>
+
+
+
+
+
+</form>
+
+
